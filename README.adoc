@@ -1,0 +1,22 @@
+== Overview
+
+A solution to build the necessary infrastucture on OpenStack for Multi Tier App.
+
+This is, today, monolithic in that the `tok.openstack` collection is *currently` embedded inside the repo.
+
+
+[NOTE]
+====
+The server component is an empty collection role
+=== Notes
+
+* defaults to run from remote control node 
+** To run locally on workstation just change inventory so it is localhost
+
+=== Three playbooks
+
+* `deploy-all.yml`
+** Full deploy from zero to running app
+* `deploy-openstack-three-tier-infra.yml`
+** Builds Infrastructure including instances but no app
+* `deploy-three-tier-app.yml` Requires existing infra (previous play), generates inventory, deploys app
